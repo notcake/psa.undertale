@@ -1,0 +1,6 @@
+{
+	"title"  : "Undertale PSA / server messages",
+	"type"   : "ServerContent",
+	"tags"   : [ "fun" ],
+	"ignore" : [ "*.jpg" ]
+}
