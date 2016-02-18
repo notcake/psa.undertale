@@ -2,5 +2,5 @@
 	"title"  : "Undertale PSA / server messages",
 	"type"   : "ServerContent",
 	"tags"   : [ "fun" ],
-	"ignore" : [ "*.jpg" ]
+	"ignore" : [ "addon.jpg", "addon.gma", "*.bat", "*.sh", ".git/*", ".svn/*" ]
 }
