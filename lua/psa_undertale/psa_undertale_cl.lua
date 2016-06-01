@@ -79,7 +79,7 @@ PSA.Undertale.TextStyles = {}
 PSA.Undertale.TextStyles ["Default"] =
 {
 	Sound            = PSA.Undertale.LoadSoundInt16Mono ("psa.undertale.resources.audio_000029ed_int16_44100hz_mono", 44100, PSA.Undertale.Resources.audio_000029ed_int16_44100hz_mono),
-	Font             = system.IsWindows () and PSA.Undertale.CreateFont ("Fixedsys", 32, 500, false) or PSA.Undertale.CreateFont ("Verdana", 32, 900, false),
+	Font             = PSA.Undertale.CreateFont ("determinationmonoweb-webfont", 32, 500, false),
 	GraphemeInterval = 0.05,
 	PositionFilter   = function (x, y) return x, y end
 }
@@ -124,31 +124,27 @@ function PSA.Undertale.ChooseTextStyle (text)
 		   string.find (lowercaseText, "nyeh") ~= nil then
 			return "Papyrus"
 		end
-	end
-	
-	if string.find (lowercaseText, "hoi") ~= nil or
-	   string.find (lowercaseText, "temmie") ~= nil or
-	   string.find (text, "!!!") ~= nil or
-	   string.find (text, "%.%.%.%.") ~= nil then
+	elseif 
+		string.find (lowercaseText, "hoi") ~= nil or
+		string.find (lowercaseText, "temmie") ~= nil or
+		string.find (text, "!!!") ~= nil or
+	   	string.find (text, "%.%.%.%.") ~= nil then
 		return "Temmie"
-	end
-	
-	if string.find (lowercaseText, "greet") ~= nil or
-	   string.find (lowercaseText, "bad time") ~= nil or
-	   string.find (lowercaseText, "brother") ~= nil or
-	   string.find (lowercaseText, "dunked") ~= nil or
-	   string.find (lowercaseText, "beautiful[ \r\n\t]+day") ~= nil or
-	   string.find (lowercaseText, "birds[ \r\n\t]+are") ~= nil or
-	   string.find (lowercaseText, "kids[ \r\n\t]+like[ \r\n\t]+you") ~= nil or
-	   string.find (lowercaseText, "in[ \r\n\t]+hell") ~= nil then
+	elseif
+		string.find (lowercaseText, "greet") ~= nil or
+		string.find (lowercaseText, "bad time") ~= nil or
+	   	string.find (lowercaseText, "brother") ~= nil or
+	   	string.find (lowercaseText, "dunked") ~= nil or
+	   	string.find (lowercaseText, "beautiful[ \r\n\t]+day") ~= nil or
+	   	string.find (lowercaseText, "birds[ \r\n\t]+are") ~= nil or
+	   	string.find (lowercaseText, "kids[ \r\n\t]+like[ \r\n\t]+you") ~= nil or
+	   	string.find (lowercaseText, "in[ \r\n\t]+hell") ~= nil then
 		return "Sans"
-	end
-	
-	if string.find (lowercaseText, "be good") ~= nil or
-	   string.find (lowercaseText, "my child") ~= nil then
+	elseif 
+		string.find (lowercaseText, "be good") ~= nil or
+		string.find (lowercaseText, "my child") ~= nil then
 		return "Toriel"
 	end
-	
 	return "Default"
 end
 
